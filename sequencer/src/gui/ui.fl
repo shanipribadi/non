@@ -775,11 +775,11 @@ if ( 0 == strncmp( picked, "Instrument", strlen( "Instrument" ) ) )
 else
 if ( 0 == strncmp( picked, "Scale", strlen( "Scale" ) ) )
 {
-	((pattern*)pattern_c->grid())->mapping.open( Mapping::SCALE, o->text() );
+	if ( ((pattern*)pattern_c->grid())->mapping.open( Mapping::SCALE, o->text() ) ) {
 
 	pattern_c->changed_mapping();
 
-	pattern_key_combo->activate();
+	pattern_key_combo->activate(); }
 }} open
                 xywh {609 734 30 24} labeltype NO_LABEL
                 code0 {update_mapping_menu();}
